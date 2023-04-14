@@ -25,15 +25,6 @@
             window.RPBridgeListener = {
                 dataReady: function (tabularData) {
                    rdata = tabularData;
-                   RPBridgeListener.generateImage();
-                },
-                generateImage: function () {
-                   html2canvas(document.body, {
-                      onrendered: function (canvas) {
-                          var imageUrl = canvas.toDataURL('image/png', 1.0);
-                          RPBridgeUtils.sendImage(imageUrl);
-                      }
-                  });
                 }
              };
             $(function () {
