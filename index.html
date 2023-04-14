@@ -20,19 +20,19 @@
             </div>
         </div>
         <script type="text/javascript">
-            var rdata;
-
+            var geoMap = document.getElementById("geoMap");
             window.RPBridgeListener = {
                 dataReady: function (tabularData) {
                     console.log(tabularData);
                     rdata = tabularData;
+                    var json_text = JSON.stringify(dataArray);
+                    geoMap.setAttribute('json-text', json_text);
                 }
-             };
+            };
             $(function () {
                 RPBridgeUtils.notifyExtensionIsReady();
             });
 
-            var geoMap = document.getElementById("geoMap");
             /*
             var dataArray = [
                 ['Abbeville', 162.21609999999998, -432.5659, 30728],
@@ -44,11 +44,8 @@
                 ['Aberdeen', 282.5342, -663.0453, 89009]
             ]
             */
-            console.log(rdata);
             var dataArray = rdata.data;
-            console.log(dataArray);
-            var json_text = JSON.stringify(dataArray);
-            geoMap.setAttribute('json-text', json_text);
+
         </script>
         <script src="f582fa1fd190f3c98f68.bundle.js"></script>
     </body>
