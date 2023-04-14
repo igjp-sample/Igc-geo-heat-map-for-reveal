@@ -24,8 +24,7 @@
             window.RPBridgeListener = {
                 dataReady: function (tabularData) {
                     console.log(tabularData);
-                    rdata = tabularData;
-                    var json_text = JSON.stringify(dataArray);
+                    var json_text = JSON.stringify(tabularData.data);
                     geoMap.setAttribute('json-text', json_text);
                     var event = new Event("change");
                     geoMap.dispatchEvent(event);
@@ -46,7 +45,6 @@
                 ['Aberdeen', 282.5342, -663.0453, 89009]
             ]
             */
-            var dataArray = rdata.data;
 
         </script>
         <script src="7ab209b28a6bc96eb4fc.bundle.js"></script>
