@@ -27,6 +27,8 @@
                     rdata = tabularData;
                     var json_text = JSON.stringify(dataArray);
                     geoMap.setAttribute('json-text', json_text);
+                    var event = new Event("change");
+                    geoMap.dispatchEvent(event);
                 }
             };
             $(function () {
@@ -47,6 +49,6 @@
             var dataArray = rdata.data;
 
         </script>
-        <script src="f582fa1fd190f3c98f68.bundle.js"></script>
+        <script src="7ab209b28a6bc96eb4fc.bundle.js"></script>
     </body>
 </html>
